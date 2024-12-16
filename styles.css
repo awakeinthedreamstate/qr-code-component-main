@@ -1,23 +1,90 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
 body {
   background-color: hsl(212, 45%, 89%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
 }
 
 .qr-code-card {
   max-width: 300px;
   height: 430px;
-  margin: 50px auto;
-  margin-top: 15vh;
   border-radius: 15px;
   background-color: white;
   box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.1);
   padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .qr-code {
-  margin: auto;
   width: 90%;
   overflow: hidden;
-  margin-bottom: 20px;
 }
 
 img {
@@ -28,25 +95,19 @@ img {
 
 .text-container {
   text-align: center;
-  font-size: 15px;
+  font-size: 1rem;
   width: 80%;
-  margin: 0 auto;
-  margin-top: -10px;
   font-family: "Outfit", sans-serif;
   color: hsl(216, 15%, 48%);
 }
 
 h3 {
   color: hsl(218, 44%, 22%);
-  width: 90%;
-  margin: 0 auto;
-  font-size: 18px;
+  width: 100%;
+  font-size: 1.2rem;
 }
 
 .attribution {
   font-family: "Outfit", sans-serif;
-  text-align: center;
-  margin: 0 auto;
-  position: relative;
-  bottom: -20px;
+  margin-top: 20px;
 }
